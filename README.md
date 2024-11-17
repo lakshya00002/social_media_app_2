@@ -1,53 +1,46 @@
-<<<<<<< HEAD
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Lk_oYyvo)
-# Backend Development - Mini Project-1
+```
+social_media_app_men/
+├── config/
+│   └── db.js                    # MongoDB connection setup
+├── user_app/
+│   ├── controllers/
+│   │   └── user_controller.js    # User-related controllers
+│   ├── models/
+│   │   ├── user.js               # User model
+│   │   └── follow.js             # Follow model
+│   ├── routes/
+│   │   └── user_routes.js        # Routes for user-related operations
+│   ├── services/
+│   │   └── user_service.js       # User-related business logic
+├── post_app/
+│   ├── controllers/
+│   │   └── post_controller.js    # Post-related controllers
+│   ├── models/
+│   │   └── post.js               # Post model
+│   ├── routes/
+│   │   └── post_routes.js        # Routes for post-related operations
+│   ├── services/
+│   │   └── post_service.js       # Post-related business logic
+├── migrations/                   # Migration scripts
+├── shared/
+│   └── utils/
+│       └── validation.js         # Utility functions
+├── .env                          # Environment variables (DB_URI, PORT)
+├── app.js                        # Entry point to set up and configure Express
+├── server.js                     # Server startup file
+└── migrate-mongo-config.js       # Migration configuration
+```
 
-## Instructions to run the project
-=======
-# SOCIAL MEDIA APP
+## Add the following to .zshrc
+1. `alias mongod='brew services run mongodb-community'`
+2. `alias mongod-status='brew services list'`
+3. `alias mongod-stop='brew services stop mongodb-community'`
 
-This is a simple social media application developed using Flask and Python. The app allows users to register, log in, create posts, send messages, comments, like, unlike and send and receive notifications.
+### Source the .zshrc file by running the following
+`source ~/.zshrc`
 
-## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-
-## Prerequisites
-
-Ensure the following are installed on your machine:
-
-- **Python 3.x**: The version of Python required for the app.
-- **pip**: Python package installer for installing the dependencies.
-
-Check if Python and pip are installed by running:
-
-
-- python --version
-- pip --version
-
-
-## Installation
-### 1. Create a Virtual Environment
-python -m venv venv
-
-### 2. Activate the Virtual Environment
-#### On Windows:
-venv\Scripts\activate
-#### On Mac/Linux:
-source venv/bin/activate
-
-### 3. Install the Required Packages
-pip install -r requirements.txt
-
-
-## Usage
-### Set environment variable
-#### On windows:
-set FLASK_APP=app.py
-#### On Mac/Linux:
-export FLASK_APP=app.py
-
-### Run the application
-python app_runner.py
->>>>>>> 5bea76e (Create README.md)
+### Open `mongosh` and run the following to check if documents were created
+1. `show databases`
+2. `use social_media_app`
+3. `show tables`
+4. `db.getCollectionNames()`

@@ -1,0 +1,99 @@
+{
+  "message": "Welcome to the Social Media API!",
+  "api_endpoints": [
+    {
+      "path": "/api/users",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "middlewares": [
+        "bound getAllUsers"
+      ]
+    },
+    {
+      "path": "/api/users/:username",
+      "methods": [
+        "GET"
+      ],
+      "middlewares": [
+        "bound getUser"
+      ]
+    },
+    {
+      "path": "/api/users/login",
+      "methods": [
+        "POST"
+      ],
+      "middlewares": [
+        "bound loginUser"
+      ]
+    },
+    {
+      "path": "/api/users/:followedId/follow",
+      "methods": [
+        "POST"
+      ],
+      "middlewares": [
+        "bound followUser"
+      ]
+    },
+    {
+      "path": "/api/users/:followedId/unfollow",
+      "methods": [
+        "DELETE"
+      ],
+      "middlewares": [
+        "bound unfollowUser"
+      ]
+    },
+    {
+      "path": "/api/users/:userId/followers",
+      "methods": [
+        "GET"
+      ],
+      "middlewares": [
+        "bound getFollowers"
+      ]
+    },
+    {
+      "path": "/api/users/:userId/following",
+      "methods": [
+        "GET"
+      ],
+      "middlewares": [
+        "bound getFollowing"
+      ]
+    },
+    {
+      "path": "/api/posts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "middlewares": [
+        "bound getAllPosts"
+      ]
+    },
+    {
+      "path": "/api/posts/:post_id",
+      "methods": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "middlewares": [
+        "bound getPost"
+      ]
+    },
+    {
+      "path": "/api",
+      "methods": [
+        "GET"
+      ],
+      "middlewares": [
+        "anonymous"
+      ]
+    }
+  ]
+}
